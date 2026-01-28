@@ -22,4 +22,21 @@ def return_py_files(path_to_file):
     print(all_files)        
     return py_files
 print(return_py_files("../../"))
+
+def dict_ends(path_to_dir):
+    all_files = os.listdir(path_to_dir)
+    list_ends = []
+    dict_num_ends = {}
+    for file in all_files:
+        if os.path.isfile(f"{path_to_dir}/{file}"):
+            f = file.split(".")
+            list_ends.append(f".{f[1]}")
+    for end in list_ends:
+        if end not in dict_num_ends:
+            dict_num_ends[end] = 1
+        else:
+            dict_num_ends[end] += 1            
+    return dict_num_ends
+print(dict_ends("../../"))
+        
         
