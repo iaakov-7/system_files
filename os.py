@@ -12,4 +12,14 @@ def print_files(path_to_dir):
             print(value)
         else:
             print_files(f"{path_to_dir}/{value}")
-print_files("../")           
+           
+def return_py_files(path_to_file):
+    all_files = os.listdir(path_to_file)
+    py_files = []
+    for file in all_files:
+        if file.endswith(".py"):
+            py_files.append(file)
+    print(all_files)        
+    return py_files
+print(return_py_files("../../"))
+        
